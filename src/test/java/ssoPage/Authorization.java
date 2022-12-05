@@ -1,0 +1,26 @@
+package ssoPage;
+
+import pages.ElementsPageSSO;
+
+import static io.qameta.allure.Allure.step;
+
+public class Authorization {
+    ElementsPageSSO elementsPageSSO = new ElementsPageSSO();
+    private static final String LOGIN = "lk_10317710";
+    private static final String PASSWORD = "South_ELK_1392!";
+
+
+    public void userAuthorization() {
+        step("Ввод логина",() ->{
+        elementsPageSSO.getLoginInput().setValue(LOGIN);
+        });
+        step("Ввод пароля",()->{
+            elementsPageSSO.getPasswordInput().setValue(PASSWORD);
+        });
+
+        step("Клик войти",()->{
+            elementsPageSSO.getLoginButton().click();
+        });
+
+    }
+}
