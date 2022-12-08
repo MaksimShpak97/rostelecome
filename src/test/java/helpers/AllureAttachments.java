@@ -10,9 +10,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
-
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.openqa.selenium.logging.LogType.BROWSER;
+
 
 public class AllureAttachments {
     @Attachment(value = "{attachName}", type = "image/png")
@@ -55,7 +55,7 @@ public class AllureAttachments {
         return null;
     }
 
-    public static String getSessionId() {
+    public static String getSessionId(){
         return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
     }
 }
