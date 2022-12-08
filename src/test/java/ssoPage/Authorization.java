@@ -1,7 +1,9 @@
 package ssoPage;
 
+import com.codeborne.selenide.SetValueOptions;
 import pages.ElementsPageSSO;
 
+import static com.codeborne.selenide.SetValueOptions.withText;
 import static io.qameta.allure.Allure.step;
 
 public class Authorization {
@@ -12,10 +14,10 @@ public class Authorization {
 
     public void userAuthorization() {
         step("Ввод логина",() ->{
-        elementsPageSSO.getLoginInput().setValue(LOGIN);
+        elementsPageSSO.getLoginInput().setValue(withText(LOGIN).sensitive());
         });
         step("Ввод пароля",()->{
-            elementsPageSSO.getPasswordInput().setValue(PASSWORD);
+            elementsPageSSO.getPasswordInput().setValue(withText(PASSWORD).withDisplayedText("password value"));
         });
 
         step("Клик войти",()->{

@@ -4,7 +4,7 @@ import pages.ElementsPageSSO;
 
 import static com.codeborne.selenide.Condition.text;
 
-public class ActionsSsoPage {
+public class SsoPage {
     ElementsPageSSO elementsPageSSO = new ElementsPageSSO();
 
     public void checkingForSsoHeader(){

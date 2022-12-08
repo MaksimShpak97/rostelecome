@@ -7,10 +7,10 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
-public class ActionsMainPage {
+public class MainPage {
     ElementsMainPage elementsMainPage = new ElementsMainPage();
 
-    public ActionsMainPage openMainPage() {
+    public MainPage openMainPage() {
         step("Открываем главную страницу", () -> {
             open("/");
         });
@@ -35,7 +35,10 @@ public class ActionsMainPage {
     }
 
     public void clickButtonStartGame() {
-        elementsMainPage.getButtonStartGame().click();
+        step("Клик по кнопке 'Начать игру' на главной странице", () -> {
+            elementsMainPage.getButtonStartGame().click();
+
+        });
 
     }
 
@@ -45,9 +48,13 @@ public class ActionsMainPage {
     }
 
     public void clickButtonWriteToUs() {
-        elementsMainPage.getButtonWriteToUs().click();
+        step("Клик по кнопке 'Написать нам' в блоке разделов", () -> {
+            elementsMainPage.getButtonWriteToUs().click();
+
+        });
 
     }
+
     public void clickSelectingSection(String value) {
         $(withTagAndText("a", "" + value + "")).click();
 
