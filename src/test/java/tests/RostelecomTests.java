@@ -1,6 +1,7 @@
 package tests;
 
 import io.qameta.allure.*;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import pages.ElementsAboutPage;
@@ -30,6 +31,7 @@ public class RostelecomTests extends TestBase {
     WriteToUsPage writeToUsPage = new WriteToUsPage();
     Authorization authorization = new Authorization();
 
+    @Disabled
     @Feature(value = "Тестирование неавторизованной зоны")
     @CsvFileSource(resources = "/testData.csv")
     @DisplayName("Проверка того, что кнопки разделов в неавторизованной зоне ведут на авторизацию")
@@ -49,7 +51,7 @@ public class RostelecomTests extends TestBase {
                 .clickButtonStartGame();
         ssoPage.checkingForSsoHeader();
     }
-
+    @Disabled
     @Feature(value = "Тестирование неавторизованной зоны")
     @Test
     @DisplayName("Раздел 'Об игре' доступен в неавторизованной зоне")
