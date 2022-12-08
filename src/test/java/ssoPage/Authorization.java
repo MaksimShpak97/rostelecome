@@ -14,10 +14,10 @@ public class Authorization {
 
     public void userAuthorization() {
         step("Ввод логина",() ->{
-        elementsPageSSO.getLoginInput().setValue(withText(LOGIN).sensitive());
+        elementsPageSSO.getLoginInput().setValue(withText(LOGIN).withDisplayedText("login"));
         });
         step("Ввод пароля",()->{
-            elementsPageSSO.getPasswordInput().setValue(withText(PASSWORD).withDisplayedText("password value"));
+            elementsPageSSO.getPasswordInput().setValue(withText(PASSWORD).withDisplayedText("password"));
         });
 
         step("Клик войти",()->{
