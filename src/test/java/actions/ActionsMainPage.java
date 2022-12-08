@@ -2,6 +2,8 @@ package actions;
 
 import pages.ElementsMainPage;
 
+import static com.codeborne.selenide.Selectors.withTagAndText;
+import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
@@ -44,6 +46,10 @@ public class ActionsMainPage {
 
     public void clickButtonWriteToUs() {
         elementsMainPage.getButtonWriteToUs().click();
+
+    }
+    public void clickSelectingSection(String value) {
+        $(withTagAndText("a", "" + value + "")).click();
 
     }
 }

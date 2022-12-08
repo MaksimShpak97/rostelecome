@@ -1,6 +1,7 @@
 package tests;
 
-import com.beust.ah.A;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 import pages.ElementsAboutPage;
 import actions.ActionsMainPage;
 import pages.ElementsMainPage;
@@ -14,7 +15,7 @@ import ssoPage.Authorization;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 
-public class RostelecomeTests extends TestBase {
+public class RostelecomTests extends TestBase {
 
     ElementsMainPage elementsMainPage = new ElementsMainPage();
     ElementsAboutPage elementsAboutPage = new ElementsAboutPage();
@@ -24,29 +25,14 @@ public class RostelecomeTests extends TestBase {
     ActionsWriteToUsPage actionsWriteToUsPage = new ActionsWriteToUsPage();
     Authorization authorization = new Authorization();
 
-    @Test
+    @CsvFileSource(resources = "/testData.csv")
     @DisplayName("Проверка того что кнопка 'Генератор подарков' в неавторизованной зоне ведет на авторизацию")
-    void giftGeneratorButtonInUnauthorizedArea() {
+    @ParameterizedTest
+    void giftGeneratorButtonInUnauthorizedArea(String testData) {
         actionsMainPage.openMainPage()
-                .clickGeneratorPrize();
+                .clickSelectingSection(testData);
         actionsSsoPage.checkingForSsoHeader();
 
-    }
-
-    @Test
-    @DisplayName("Проверка того что кнопка 'За призами' в неавторизованной зоне ведет на авторизацию")
-    void logicButtonForPrizesInAnUnauthorizedZone() {
-        actionsMainPage.openMainPage().
-                clickButtonForPrizes();
-        actionsSsoPage.checkingForSsoHeader();
-    }
-
-    @Test
-    @DisplayName("Проверка того что кнопка 'История' в неавторизованной зоне ведет на авторизацию")
-    void historyButtonInUnauthorizedArea() {
-        actionsMainPage.openMainPage()
-                .clickButtonHistory();
-        actionsSsoPage.checkingForSsoHeader();
     }
 
     @Test
@@ -61,7 +47,7 @@ public class RostelecomeTests extends TestBase {
     @DisplayName("Раздел 'Об игре' доступен в неавторизованной зоне")
     void aboutGameAvailableAnUnauthorizedZone() {
         actionsMainPage.openMainPage()
-                        .clickButtonAbout();
+                .clickButtonAbout();
         elementsAboutPage.getHeaderAboutPage().shouldHave(text("Об игре"));
     }
 
