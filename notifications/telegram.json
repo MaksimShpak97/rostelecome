@@ -1,0 +1,16 @@
+{
+  "base": {
+    "project": "RTK Gift Generator",
+    "environment": "prod",
+    "comment": "Telegram report",
+    "reportLink": "https://igra.rt.ru",
+    "language": "en",
+    "allureFolder": "build/reports/allure-report/allureReport",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "5525783958:AAEj6CxS9SAyshSBpDamqQobfb0ThNl2_7U",
+    "chat": "788646272",
+    "replyTo": ""
+  }
+}
