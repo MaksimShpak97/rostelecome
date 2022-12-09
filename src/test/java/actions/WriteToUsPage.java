@@ -1,6 +1,6 @@
 package actions;
 
-import pages.ElementsWritToUsPage;
+import elementsPages.ElementsWritToUsPage;
 
 import static io.qameta.allure.Allure.step;
 
@@ -13,4 +13,5 @@ public class WriteToUsPage {
 
         });
     }
+
 }

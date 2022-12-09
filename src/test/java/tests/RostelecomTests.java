@@ -5,14 +5,15 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
-import pages.ElementsAboutPage;
+import elementsPages.ElementsAboutPage;
 import actions.MainPage;
-import pages.ElementsMainPage;
+import elementsPages.ElementsMainPage;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import pages.ElementsSuperPrizesPage;
+import elementsPages.ElementsSuperPrizesPage;
 import actions.SsoPage;
 import actions.WriteToUsPage;
+import elementsPages.ElementsWritToUsPage;
 import ssoPage.Authorization;
 
 import static com.codeborne.selenide.Condition.text;
@@ -31,8 +32,9 @@ public class RostelecomTests extends TestBase {
     SsoPage ssoPage = new SsoPage();
     WriteToUsPage writeToUsPage = new WriteToUsPage();
     Authorization authorization = new Authorization();
+    ElementsWritToUsPage elementsWritToUsPage = new ElementsWritToUsPage();
 
-    @Disabled
+
     @Feature(value = "Тестирование неавторизованной зоны")
     @CsvFileSource(resources = "/testData.csv")
     @DisplayName("Проверка того, что кнопки разделов в неавторизованной зоне ведут на авторизацию")
@@ -52,6 +54,7 @@ public class RostelecomTests extends TestBase {
                 .clickButtonStartGame();
         ssoPage.checkingForSsoHeader();
     }
+
     @Disabled
     @Feature(value = "Тестирование неавторизованной зоны")
     @Test
@@ -78,10 +81,8 @@ public class RostelecomTests extends TestBase {
     @DisplayName("Наличие заглушки в разеделе 'Написать нам'")
     void plugIsOn() {
         mainPage.openMainPage().clickButtonWriteToUs();
-        writeToUsPage.clickButtonBackPlug();
-        step("Проверка что кнопка 'Начать игру' видимая", () ->{
-            elementsMainPage.getButtonStartGame().shouldBe(visible);
-        });
+        elementsWritToUsPage.getHeaderPlugText().shouldHave(text("Функционал в разработке"));
+
     }
 
     @Test
@@ -90,6 +91,9 @@ public class RostelecomTests extends TestBase {
         mainPage.openMainPage()
                 .clickButtonStartGame();
         authorization.userAuthorization();
+        step("Проверка что кнопка 'Выход' появилась", () ->{
+            mainPage.getLogOutButton().shouldBe(visible);
+        });
 
     }
 

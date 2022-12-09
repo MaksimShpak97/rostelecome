@@ -1,7 +1,6 @@
 package ssoPage;
 
-import com.codeborne.selenide.SetValueOptions;
-import pages.ElementsPageSSO;
+import elementsPages.ElementsPageSSO;
 
 import static com.codeborne.selenide.SetValueOptions.withText;
 import static io.qameta.allure.Allure.step;

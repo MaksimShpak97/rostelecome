@@ -1,14 +1,13 @@
 package actions;
 
-import pages.ElementsPageSSO;
+import elementsPages.ElementsPageSSO;
 
 import static com.codeborne.selenide.Condition.text;
 
-public class SsoPage {
-    ElementsPageSSO elementsPageSSO = new ElementsPageSSO();
+public class SsoPage extends ElementsPageSSO {
 
     public void checkingForSsoHeader(){
-        elementsPageSSO.getAuthorizationHeaderTextElement().shouldHave(text(elementsPageSSO.getAuthorizationHeaderText()));
+        getAuthorizationHeaderTextElement().shouldHave(text(getAuthorizationHeaderText()));
 
     }
 }

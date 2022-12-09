@@ -1,14 +1,14 @@
 package actions;
 
-import pages.ElementsMainPage;
+import elementsPages.ElementsMainPage;
 
 import static com.codeborne.selenide.Selectors.withTagAndText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
-public class MainPage {
-    ElementsMainPage elementsMainPage = new ElementsMainPage();
+public class MainPage extends ElementsMainPage {
+//    ElementsMainPage elementsMainPage = new ElementsMainPage();
 
     public MainPage openMainPage() {
         step("Открываем главную страницу", () -> {
@@ -18,45 +18,51 @@ public class MainPage {
     }
 
     public void clickGeneratorPrize() {
-        elementsMainPage.getButtonGeneratorPrize().click();
+        getGeneratorPrizeButton().click();
     }
 
     public void clickButtonForPrizes() {
-        elementsMainPage.getButtonForPrizes().click();
+        getForPrizesButton().click();
     }
 
     public void clickButtonHistory() {
-        elementsMainPage.getButtonHistory().click();
+        getHistoryButton().click();
     }
 
     public void clickButtonAbout() {
-        elementsMainPage.getButtonAbout().click();
+        getAboutButton().click();
 
     }
 
     public void clickButtonStartGame() {
         step("Клик по кнопке 'Начать игру' на главной странице", () -> {
-            elementsMainPage.getButtonStartGame().click();
+            getStartGameButton().click();
 
         });
 
     }
 
     public void clickButtonSuperPrizes() {
-        elementsMainPage.getButtonSuperPrizes().click();
+        getSuperPrizesButton().click();
 
     }
 
     public void clickButtonWriteToUs() {
         step("Клик по кнопке 'Написать нам' в блоке разделов", () -> {
-            elementsMainPage.getButtonWriteToUs().click();
+            getWriteToUsButton().click();
 
         });
 
     }
 
     public void clickSelectingSection(String value) {
-        $(withTagAndText("a", "" + value + "")).click();
+        step("Клик по разделу " + value + " в блоке разделов", () -> {
+            $(withTagAndText("a", "" + value + "")).click();
 
+        });
     }
+
+//    public void logOutButton(){
+//        $("a[href='/logout']");
+//    }
 }
