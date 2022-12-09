@@ -34,7 +34,7 @@ public class RostelecomTests extends TestBase {
     Authorization authorization = new Authorization();
     ElementsWritToUsPage elementsWritToUsPage = new ElementsWritToUsPage();
 
-
+    @Disabled
     @Feature(value = "Тестирование неавторизованной зоны")
     @CsvFileSource(resources = "/testData.csv")
     @DisplayName("Проверка того, что кнопки разделов в неавторизованной зоне ведут на авторизацию")
@@ -45,7 +45,7 @@ public class RostelecomTests extends TestBase {
         ssoPage.checkingForSsoHeader();
 
     }
-
+    @Disabled
     @Feature(value = "Тестирование неавторизованной зоны")
     @Test
     @DisplayName("Проверка того что кнопка 'Начать игру' в неавторизованной зоне ведет на авторизацию")
