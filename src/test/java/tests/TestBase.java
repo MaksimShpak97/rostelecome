@@ -24,7 +24,6 @@ public class TestBase {
 
         Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = "https://igra.rt.ru";
-//            Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
         Configuration.browser = System.getProperty("browser_name", "chrome");
         Configuration.browserVersion = System.getProperty("browser_version", "100.0");
