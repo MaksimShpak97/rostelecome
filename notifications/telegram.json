@@ -5,7 +5,7 @@
     "comment": "Telegram report",
     "reportLink": "https://igra.rt.ru",
     "language": "en",
-    "allureFolder": "build/reports/allure-report/allureReport",
+    "allureFolder": "build/allure-report/",
     "enableChart": true
   },
   "telegram": {
