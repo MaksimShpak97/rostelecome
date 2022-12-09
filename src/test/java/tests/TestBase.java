@@ -16,20 +16,20 @@ public class TestBase {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
-//        if (System.getProperty("remoteUrl") != null) {
-//            Configuration.remote = System.getProperty("remoteUrl");
+        if (System.getProperty("remoteUrl") != null) {
+            Configuration.remote = System.getProperty("remoteUrl");
             capabilities.setCapability("enableVNC", true);
             capabilities.setCapability("enableVideo", true);
-//        }
+        }
 
         Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = "https://igra.rt.ru";
-//        Configuration.browser = browserName;
-        Configuration.browserSize ="1920x1080";
-//        Configuration.browserVersion = browserVersion;
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-    }
+//            Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
+        Configuration.browser = System.getProperty("browser_name", "chrome");
+        Configuration.browserVersion = System.getProperty("browser_version", "100.0");
+        Configuration.browserSize = System.getProperty("browser_size", "1920x1080");
+    }
 
     @AfterEach
     public void afterEach() {

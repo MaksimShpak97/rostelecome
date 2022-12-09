@@ -2,6 +2,7 @@ package tests;
 
 import io.qameta.allure.*;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import pages.ElementsAboutPage;
@@ -73,6 +74,7 @@ public class RostelecomTests extends TestBase {
     }
 
     @Test
+    @Tag("properties")
     @DisplayName("Наличие заглушки в разеделе 'Написать нам'")
     void plugIsOn() {
         mainPage.openMainPage().clickButtonWriteToUs();

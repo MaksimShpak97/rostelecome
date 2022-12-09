@@ -7,6 +7,12 @@ plugins {
 repositories {
     mavenCentral()
 }
+compileJava {
+    options.encoding = 'UTF-8'
+}
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
 
 def allureVersion = "2.17.3",
     selenideVersion = "6.5.0",
@@ -34,10 +40,12 @@ dependencies {
             "org.aeonbits.owner:owner:1.0.12",
             "org.assertj:assertj-core:3.19.0",
             "org.slf4j:slf4j-simple:1.7.29",
-            "org.junit.jupiter:junit-jupiter:$junitVersion")
+            "org.junit.jupiter:junit-jupiter:$junitVersion"
+    )
 }
 
 tasks.withType(Test) {
+    systemProperties(System.getProperties())
     useJUnitPlatform()
 
     testLogging {
@@ -47,8 +55,9 @@ tasks.withType(Test) {
         }
     }
 }
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
+task properties_test(type:Test){
+    useJUnitPlatform{
+        includeTags "properties"
+    }
 }
-
 test {}
