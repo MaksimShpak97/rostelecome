@@ -34,6 +34,7 @@
 - :heavy_check_mark: Проверка работы разделов в неавторизованной зоне;
 - :heavy_check_mark: Авторизация пользователя;
 - :heavy_check_mark: Кнопка 'отправить' в разделе 'Написать нам' не кликабельна при незаполненных полях;
+- :heavy_check_mark: Проверка загрузки страницы с генератором подарков
 
 ## <img src="images/Jenkins.svg" width="25" height="25"  alt="Jenkins"/></a> Jenkins job
 <a target="_blank" href="https://jenkins.autotests.cloud/job/rostelecome/">Сборка в Jenkins</a>
