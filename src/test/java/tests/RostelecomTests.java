@@ -121,7 +121,7 @@ public class RostelecomTests extends TestBase {
 
     @Test
     @DisplayName("При клике на 'Начать игру' открывается экран с генератором подарков")
-    void sdfdfef() {
+    void loadingPlayingField() {
         mainPage.openMainPage()
                 .clickButtonStartGame();
         authorization.userAuthorization();
