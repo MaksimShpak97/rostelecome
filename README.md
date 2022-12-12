@@ -71,7 +71,7 @@ test
 ## <img src="images/Telegram.svg" width="25" height="25"  alt="Allure"/></a> Уведомление в Telegram при помощи бота
 
 <p align="center">
-<img title="Allure Overview Dashboard" src="images/telegram_report.jpg" width="290" height="290">
+<img title="Allure Overview Dashboard" src="images/telegram_report.jpg" width="350" height="350">
 </p>
 
 ### <img src="images/Selenoid.svg" width="25" height="25"  alt="Allure"/></a> Примеры видео о прохождении тестов
