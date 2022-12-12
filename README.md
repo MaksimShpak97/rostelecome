@@ -1,9 +1,8 @@
 # Проект по автоматизации тестирования для новогодней игры Ростелеком
 
-[//]: # (<img src="images/favicon.ico" width="25" height="25"  alt="Jenkins"/></a> Jenkins job)
-<a target="_blank"  href="https://igra.rt.ru/"><img src="images/favicon.ico" width="25" height="25"  alt="Jenkins"/>Новогодняя онлайн-игра | Генератор подарков</a>
+<a target="_blank"  href="https://igra.rt.ru/"><img src="images/favicon.ico" width="25" height="25"  alt="Jenkins"/> Новогодняя онлайн-игра | Генератор подарков</a>
 <p align="center">
-<a href="https://miro.com/"><img src="images/generator_promo.png" width="900" height="400"  alt="IDEA"/></a>
+<a href="https://igra.rt.ru/"><img src="images/generator_promo.png" width="900" height="400"  alt="IDEA"/></a>
 
 </p>
 
@@ -72,7 +71,7 @@ test
 ## <img src="images/Telegram.svg" width="25" height="25"  alt="Allure"/></a> Уведомление в Telegram при помощи бота
 
 <p align="center">
-<img title="Allure Overview Dashboard" src="images/telegram_report.jpg">
+<img title="Allure Overview Dashboard" src="images/telegram_report.jpg" width="290" height="290">
 </p>
 
 ### <img src="images/Selenoid.svg" width="25" height="25"  alt="Allure"/></a> Примеры видео о прохождении тестов
