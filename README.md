@@ -13,8 +13,6 @@
 - [Реализованные проверки](#scroll-реализованные-проверки)
 - [Сборка в Jenkins](#-jenkins-job)
 - [Запуск тестов из терминала](#computer-Запуск-тестов-из-терминала)
-- [Allure отчет](#-отчет-в-allure-report)
-- [Интеграция с Allure TestOps](#Интеграция-с-Allure-TestOps)
 - [Отчет в Telegram](#-уведомление-в-telegram-при-помощи-бота)
 - [Видео примеры прохождения тестов](#-примеры-видео-о-прохождении-тестов)
 
@@ -36,25 +34,21 @@
 
 - :heavy_check_mark: Проверка работы разделов в неавторизованной зоне;
 - :heavy_check_mark: Авторизация пользователя;
-- :heavy_check_mark: Проверка отображения вакансий выбранного города при клике на иконку столицы.
-- :heavy_check_mark: Проверка наличия логотипа при смене языка.
-- :heavy_check_mark: Проверка, что страница меняет свое названия при смене языка.
-- :x: Пример упавшего теста.
+- :heavy_check_mark: Кнопка 'отправить' в разделе 'Написать нам' не кликабельна при незаполненных полях;
 
 ## <img src="images/Jenkins.svg" width="25" height="25"  alt="Jenkins"/></a> Jenkins job
 <a target="_blank" href="https://jenkins.autotests.cloud/job/rostelecome/">Сборка в Jenkins</a>
 <p align="center">
-<a href="https://jenkins.autotests.cloud/job/rostelecome/"><img src="images/Jenkins_job.png" alt="Jenkins"/></a>
+<a href="https://jenkins.autotests.cloud/job/rostelecome/"><img src="images/jenkins_job.png" alt="Jenkins"/></a>
 </p>
 
 ### Параметры сборки в Jenkins:
 
-* BrowserName (браузер, по умолчанию chrome)
-* BrowserVrersion (версия браузера, по умолчанию 91.0)
-* BrowserSise (размер окна браузера, по умолчанию 1920x1080)
-* BrowserMobile (название мобильного устройства, для примера iPhone X)
-* remoteDriverUrl (логин, пароль и адрес удаленного сервера selenoid или grid)
-* videoStorage (адрес, по которому можно получить видео)
+* BROWSER_NAME (браузер, по умолчанию chrome)
+* BROWSER_VERSION (версия браузера, по умолчанию 99.0)
+* BROWSER_SIZE (размер окна браузера, по умолчанию 1920x1080)
+* REMOTE_DRIVER_URL (логин, пароль и адрес удаленного сервера selenoid)
+
 
 ### :computer: Запуск тестов из терминала
 
@@ -71,53 +65,18 @@ test
 -Dbrowser_name=${BROWSER_NAME}
 -Dbrowser_version=${BROWSER_VERSION}
 -Dbrowser_size=${BROWSER_SIZE}
--DbrowserMobileView="${BROWSER_MOBILE}"
 -DvideoStorage=https://${REMOTE_DRIVER_URL}/video/
 ```
-
-## <img src="images/Allure_Report.svg" width="25" height="25"  alt="Allure"/></a> Отчет в <a target="_blank" href="https://jenkins.autotests.cloud/job/miro-e2e-tests-jenkins/45/allure/">Allure report</a>
-
-### Основное окно
-
-<p align="center">
-<img title="Allure Overview Dashboard" src="images/Allure_main.png">
-</p>
-
-### Тесты
-
-<p align="center">
-<img title="Allure Tests" src="images/Allure_tests.png">
-</p>
-
-### Гафики
-
-<p align="center">
-<img title="Allure Graphics" src="images/Allure_graphics.png">
-</p>
-
-## <img src="images/Allure_EE.svg" width="25" height="25"  alt="Allure"/></a>Интеграция с <a target="_blank" href="https://allure.autotests.cloud/launch/16057">Allure TestOps</a>
-
-### Дашборд
-
-<p align="center">
-<img title="Allure TestOps Dashboard" src="images/testOps_main.png">
-</p>
-
-### Тест-кейсы
-
-<p align="center">
-<img title="Allure TestOps Tests" src="images/testOps_tests.png">
-</p>
 
 
 ## <img src="images/Telegram.svg" width="25" height="25"  alt="Allure"/></a> Уведомление в Telegram при помощи бота
 
 <p align="center">
-<img title="Allure Overview Dashboard" src="images/telegram_report.png">
+<img title="Allure Overview Dashboard" src="images/telegram_report.jpg">
 </p>
 
 ### <img src="images/Selenoid.svg" width="25" height="25"  alt="Allure"/></a> Примеры видео о прохождении тестов
 
 <p align="center">
-<img title="Selenoid Video" src="images/video_1.gif" width="250" height="153"  alt="video"> <img title="Selenoid Video" src="images/video_2.gif" width="250" height="153"  alt="video"> 
+<img title="Selenoid Video" src="images/video_1.gif" width="300" height="200"  alt="video">
 </p>
