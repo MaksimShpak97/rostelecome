@@ -1,11 +1,11 @@
 package actions;
 
-import elementsPages.ElementsWritToUsPage;
+import elementsPages.ElementsWriteToUsPage;
 
 import static io.qameta.allure.Allure.step;
 
 public class WriteToUsPage {
-    ElementsWritToUsPage elementsWritToUsPage = new ElementsWritToUsPage();
+    ElementsWriteToUsPage elementsWritToUsPage = new ElementsWriteToUsPage();
 
     public void clickButtonBackPlug() {
         step("Клик по кнопке 'назад'", ()->{

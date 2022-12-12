@@ -13,11 +13,10 @@ import org.junit.jupiter.api.Test;
 import elementsPages.ElementsSuperPrizesPage;
 import actions.SsoPage;
 import actions.WriteToUsPage;
-import elementsPages.ElementsWritToUsPage;
+import elementsPages.ElementsWriteToUsPage;
 import ssoPage.Authorization;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static io.qameta.allure.Allure.step;
 
 @Epic(value = "Ростелеком")
@@ -32,7 +31,7 @@ public class RostelecomTests extends TestBase {
     SsoPage ssoPage = new SsoPage();
     WriteToUsPage writeToUsPage = new WriteToUsPage();
     Authorization authorization = new Authorization();
-    ElementsWritToUsPage elementsWritToUsPage = new ElementsWritToUsPage();
+    ElementsWriteToUsPage elementsWritToUsPage = new ElementsWriteToUsPage();
 
     @Feature(value = "Тестирование неавторизованной зоны")
     @CsvFileSource(resources = "/testData.csv")
@@ -74,6 +73,25 @@ public class RostelecomTests extends TestBase {
 
     }
 
+    @Feature(value = "Тестирование неавторизованной зоны")
+    @Test
+    @DisplayName("Раздел 'Написать нам' доступен в неавторизованной зоне")
+    void writeToUsAvailableAnUnauthorizedZone() {
+        mainPage.openMainPage()
+                .clickButtonWriteToUs();
+        step("Заголовок формы обратной связи содержит текст " +
+                "'" + elementsWritToUsPage.getTitleFeedbackForm() + "'", () -> {
+            elementsWritToUsPage.getFormTitle().shouldHave(text(elementsWritToUsPage.getTitleFeedbackForm()));
+
+        });
+        step("Кнопка 'Отправить ' не доступная для клика при незаполненных полях", () -> {
+            elementsWritToUsPage.getSendButton().shouldHave(disabled);
+
+        });
+
+    }
+
+    @Disabled("Убрали заглушку в данный момент")
     @Test
     @Tag("properties")
     @DisplayName("Наличие заглушки в разеделе 'Написать нам'")
