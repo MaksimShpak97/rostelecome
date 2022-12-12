@@ -64,7 +64,6 @@ test
 -Dbrowser_name=${BROWSER_NAME}
 -Dbrowser_version=${BROWSER_VERSION}
 -Dbrowser_size=${BROWSER_SIZE}
--DvideoStorage=https://${REMOTE_DRIVER_URL}/video/
 ```
 
 
