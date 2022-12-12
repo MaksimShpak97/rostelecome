@@ -1,6 +1,10 @@
 package tests;
 
+import actions.GamePage;
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Selenide;
 import io.qameta.allure.*;
+import org.checkerframework.checker.units.qual.C;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -17,6 +21,8 @@ import elementsPages.ElementsWriteToUsPage;
 import ssoPage.Authorization;
 
 import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selenide.$;
+import static io.qameta.allure.Allure.setLifecycle;
 import static io.qameta.allure.Allure.step;
 
 @Epic(value = "Ростелеком")
@@ -29,9 +35,9 @@ public class RostelecomTests extends TestBase {
     ElementsSuperPrizesPage elementsSuperPrizesPage = new ElementsSuperPrizesPage();
     MainPage mainPage = new MainPage();
     SsoPage ssoPage = new SsoPage();
-    WriteToUsPage writeToUsPage = new WriteToUsPage();
     Authorization authorization = new Authorization();
     ElementsWriteToUsPage elementsWritToUsPage = new ElementsWriteToUsPage();
+    GamePage gamePage = new GamePage();
 
     @Feature(value = "Тестирование неавторизованной зоны")
     @CsvFileSource(resources = "/testData.csv")
@@ -111,6 +117,16 @@ public class RostelecomTests extends TestBase {
             mainPage.getLogOutButton().shouldBe(visible);
         });
 
+    }
+
+    @Test
+    @DisplayName("При клике на 'Начать игру' открывается экран с генератором подарков")
+    void sdfdfef() {
+        mainPage.openMainPage()
+                .clickButtonStartGame();
+        authorization.userAuthorization();
+        mainPage.clickButtonStartGame();
+        gamePage.checkCanvasIsVisible();
     }
 
 }
